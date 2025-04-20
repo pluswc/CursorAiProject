@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미국 주요 경제지표</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+        opacity: 0;
+      }
+
+      .animate-delay-100 {
+        animation-delay: 0.1s;
+      }
+
+      .animate-delay-200 {
+        animation-delay: 0.2s;
+      }
+
+      .animate-delay-300 {
+        animation-delay: 0.3s;
+      }
+
+      .animate-delay-400 {
+        animation-delay: 0.4s;
+      }
+
+      .animate-delay-500 {
+        animation-delay: 0.5s;
+      }
+
+      .animate-delay-600 {
+        animation-delay: 0.6s;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                200: "#bae6fd",
+                300: "#7dd3fc",
+                400: "#38bdf8",
+                500: "#0ea5e9",
+                600: "#0284c7",
+                700: "#0369a1",
+                800: "#075985",
+                900: "#0c4a6e",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-12 px-4 sm:px-6 lg:px-8"
+  >
+    <div class="max-w-4xl mx-auto">
+      <div
+        class="backdrop-blur-lg bg-white/30 rounded-2xl shadow-lg p-8 border border-white/40 animate-fade-in"
+      >
+        <div
+          class="flex items-center justify-center mb-8 animate-fade-in animate-delay-100"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
+            alt="미국 국기"
+            class="w-24 h-auto mr-4 drop-shadow-lg"
+          />
+          <h1 class="text-3xl font-bold text-gray-800 drop-shadow-sm">
+            미국 주요 경제지표
+          </h1>
+        </div>
+
+        <div class="space-y-4">
+          <div
+            class="backdrop-blur-md bg-white/40 rounded-xl p-6 border border-white/50 hover:bg-white/60 transition-all duration-300 shadow-sm hover:shadow-md animate-fade-in animate-delay-200"
+          >
+            <h2 class="text-xl font-bold text-gray-800 mb-2">
+              GDP (국내총생산)
+            </h2>
+            <p class="text-gray-700">
+              미국 경제의 전체적인 규모를 측정하는 가장 중요한 지표입니다.
+              분기별로 발표되며, 경제 성장률을 나타내는 핵심 지표입니다.
+            </p>
+          </div>
+
+          <div
+            class="backdrop-blur-md bg-white/40 rounded-xl p-6 border border-white/50 hover:bg-white/60 transition-all duration-300 shadow-sm hover:shadow-md animate-fade-in animate-delay-300"
+          >
+            <h2 class="text-xl font-bold text-gray-800 mb-2">실업률</h2>
+            <p class="text-gray-700">
+              노동력 중 실업자의 비율을 나타내는 지표입니다. 매월 발표되며,
+              노동시장의 건강 상태를 파악하는 데 중요한 역할을 합니다.
+            </p>
+          </div>
+
+          <div
+            class="backdrop-blur-md bg-white/40 rounded-xl p-6 border border-white/50 hover:bg-white/60 transition-all duration-300 shadow-sm hover:shadow-md animate-fade-in animate-delay-400"
+          >
+            <h2 class="text-xl font-bold text-gray-800 mb-2">
+              소비자물가지수 (CPI)
+            </h2>
+            <p class="text-gray-700">
+              소비자들이 구매하는 상품과 서비스의 가격 변화를 측정하는
+              지표입니다. 인플레이션을 측정하는 주요 지표로 사용됩니다.
+            </p>
+          </div>
+
+          <div
+            class="backdrop-blur-md bg-white/40 rounded-xl p-6 border border-white/50 hover:bg-white/60 transition-all duration-300 shadow-sm hover:shadow-md animate-fade-in animate-delay-500"
+          >
+            <h2 class="text-xl font-bold text-gray-800 mb-2">연방기금금리</h2>
+            <p class="text-gray-700">
+              연방준비제도(Fed)가 설정하는 금리로, 미국의 통화정책을 결정하는
+              핵심 지표입니다.
+            </p>
+          </div>
+
+          <div
+            class="backdrop-blur-md bg-white/40 rounded-xl p-6 border border-white/50 hover:bg-white/60 transition-all duration-300 shadow-sm hover:shadow-md animate-fade-in animate-delay-600"
+          >
+            <h2 class="text-xl font-bold text-gray-800 mb-2">소매판매</h2>
+            <p class="text-gray-700">
+              소비자 지출의 주요 지표로, 미국 경제의 약 70%를 차지하는 소비
+              부문의 건강 상태를 나타냅니다.
+            </p>
+          </div>
+
+          <div
+            class="backdrop-blur-md bg-white/40 rounded-xl p-6 border border-white/50 hover:bg-white/60 transition-all duration-300 shadow-sm hover:shadow-md animate-fade-in animate-delay-700"
+          >
+            <h2 class="text-xl font-bold text-gray-800 mb-2">주택시장 지표</h2>
+            <p class="text-gray-700">
+              신규주택착공, 주택판매, 주택가격 등 주택시장의 동향을 나타내는
+              지표들로, 경제의 중요한 부문을 반영합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
