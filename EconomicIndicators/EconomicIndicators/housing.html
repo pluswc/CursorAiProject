@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주택시장 지표 - 미국 경제지표</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+        opacity: 0;
+      }
+
+      .sidebar-item {
+        @apply px-6 py-2 text-gray-700 hover:bg-primary-100/50 rounded-lg transition-colors duration-200;
+      }
+
+      .sidebar-item.active {
+        @apply bg-primary-100 text-primary-800 font-medium;
+      }
+
+      .sidebar-group {
+        @apply mb-6 mt-6;
+      }
+
+      .sidebar-group-title {
+        @apply px-4 py-3 font-bold text-gray-800 uppercase tracking-wider border-b border-gray-200/50;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                200: "#bae6fd",
+                300: "#7dd3fc",
+                400: "#38bdf8",
+                500: "#0ea5e9",
+                600: "#0284c7",
+                700: "#0369a1",
+                800: "#075985",
+                900: "#0c4a6e",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100"
+  >
+    <div class="flex">
+      <!-- 사이드바 -->
+      <div
+        class="w-72 min-h-screen bg-white/30 backdrop-blur-lg border-r border-white/40 p-4"
+      >
+        <div class="flex items-center justify-center mb-8">
+          <a href="index.html" class="flex items-center">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
+              alt="미국 국기"
+              class="w-16 h-auto mr-2"
+            />
+            <h1 class="text-xl font-bold text-gray-800">미국 경제지표</h1>
+          </a>
+        </div>
+
+        <!-- 성장 지표 -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">성장 지표</div>
+          <div class="space-y-1 mt-2">
+            <a href="gdp.html" class="sidebar-item">
+              <div class="flex items-center">
+                <span class="mr-2">📈</span>
+                <span>GDP (국내총생산)</span>
+              </div>
+            </a>
+            <a href="retail-sales.html" class="sidebar-item">
+              <div class="flex items-center">
+                <span class="mr-2">🛍️</span>
+                <span>소매판매</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 물가 지표 -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">물가 지표</div>
+          <div class="space-y-1 mt-2">
+            <a href="cpi.html" class="sidebar-item">
+              <div class="flex items-center">
+                <span class="mr-2">💰</span>
+                <span>소비자물가지수 (CPI)</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 고용 지표 -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">고용 지표</div>
+          <div class="space-y-1 mt-2">
+            <a href="unemployment.html" class="sidebar-item">
+              <div class="flex items-center">
+                <span class="mr-2">👥</span>
+                <span>실업률</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 금융시장 지표 -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">금융시장 지표</div>
+          <div class="space-y-1 mt-2">
+            <a href="fed-rate.html" class="sidebar-item">
+              <div class="flex items-center">
+                <span class="mr-2">🏦</span>
+                <span>연방기금금리</span>
+              </div>
+            </a>
+            <a href="housing.html" class="sidebar-item active">
+              <div class="flex items-center">
+                <span class="mr-2">🏠</span>
+                <span>주택시장 지표</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 메인 콘텐츠 -->
+      <div class="flex-1 p-8">
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="backdrop-blur-lg bg-white/30 rounded-2xl shadow-lg p-8 border border-white/40 animate-fade-in"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-2xl font-bold text-gray-800">주택시장 지표</h2>
+              <a
+                href="index.html"
+                class="text-primary-600 hover:text-primary-800 font-medium"
+              >
+                홈으로
+              </a>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full bg-white/50 rounded-lg overflow-hidden">
+                <thead class="bg-primary-100/50">
+                  <tr>
+                    <th class="px-4 py-2 text-left">발표일</th>
+                    <th class="px-4 py-2 text-right">실제</th>
+                    <th class="px-4 py-2 text-right">예상치</th>
+                    <th class="px-4 py-2 text-right">차이</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-t border-gray-200">
+                    <td class="px-4 py-2">2024.04.18</td>
+                    <td class="px-4 py-2 text-right">6.88%</td>
+                    <td class="px-4 py-2 text-right">6.90%</td>
+                    <td class="px-4 py-2 text-right text-green-500">-0.02%</td>
+                  </tr>
+                  <tr class="border-t border-gray-200">
+                    <td class="px-4 py-2">2024.03.21</td>
+                    <td class="px-4 py-2 text-right">6.87%</td>
+                    <td class="px-4 py-2 text-right">6.85%</td>
+                    <td class="px-4 py-2 text-right text-red-500">+0.02%</td>
+                  </tr>
+                  <tr class="border-t border-gray-200">
+                    <td class="px-4 py-2">2024.02.22</td>
+                    <td class="px-4 py-2 text-right">6.90%</td>
+                    <td class="px-4 py-2 text-right">6.88%</td>
+                    <td class="px-4 py-2 text-right text-red-500">+0.02%</td>
+                  </tr>
+                  <tr class="border-t border-gray-200">
+                    <td class="px-4 py-2">2024.01.25</td>
+                    <td class="px-4 py-2 text-right">6.69%</td>
+                    <td class="px-4 py-2 text-right">6.70%</td>
+                    <td class="px-4 py-2 text-right text-green-500">-0.01%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-6 space-y-4">
+              <h3 class="text-xl font-semibold text-gray-800">
+                주택시장 지표란?
+              </h3>
+              <p class="text-gray-700">
+                주택시장 지표는 주택가격, 모기지 금리, 주택 판매량 등을 포함하는
+                종합적인 지표입니다. 이는 주택시장의 건강 상태와 경제 전반의
+                활력을 파악하는 데 중요한 역할을 합니다.
+              </p>
+
+              <h3 class="text-xl font-semibold text-gray-800">주요 구성요소</h3>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>모기지 금리 (Mortgage Rate)</li>
+                <li>주택 판매량 (Home Sales)</li>
+                <li>주택가격 지수 (Home Price Index)</li>
+                <li>주택 착공량 (Housing Starts)</li>
+                <li>주택 건축 허가 (Building Permits)</li>
+              </ul>
+
+              <h3 class="text-xl font-semibold text-gray-800">최근 동향</h3>
+              <p class="text-gray-700">
+                2024년 4월 모기지 금리는 6.88%로, 예상치 6.90%보다 소폭 낮은
+                수준을 기록했습니다. 이는 연방기금금리 인상 이후 상승했던 모기지
+                금리가 안정화되는 추세를 보이고 있음을 나타냅니다.
+              </p>
+
+              <h3 class="text-xl font-semibold text-gray-800">시장 영향</h3>
+              <p class="text-gray-700">
+                주택시장 지표는 부동산 시장의 활력과 소비자 신뢰를 반영합니다.
+                모기지 금리의 변화는 주택 구매력에 직접적인 영향을 미치며, 이는
+                건설업, 금융업, 소매업 등 다양한 산업에 파급 효과를 가져옵니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
